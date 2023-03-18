@@ -5,7 +5,7 @@ const resultElement = document.getElementById('result');
 const ctx = canvas.getContext('2d');
 
 navigator.mediaDevices.getUserMedia(
-        {{ video: { width: 360, height: 640 }, audio: false })
+        {{ video: { width: 720, height: 1280 }, audio: false })
     .then(stream => {
         video.srcObject = stream;
         video.play();
