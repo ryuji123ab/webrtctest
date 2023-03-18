@@ -72,7 +72,6 @@ const zoomedWidth = cameraCanvas.width / zoomValue;
 const zoomedHeight = cameraCanvas.height / zoomValue;
 ctxCamera.drawImage(video, (cameraCanvas.width - zoomedWidth) / 2, (cameraCanvas.height - zoomedHeight) / 2, zoomedWidth, zoomedHeight);
 
-    ctxCamera.drawImage(video, 0, 0, cameraCanvas.width, cameraCanvas.height);
     ctxOverlay.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
 
     const centerX = cameraCanvas.width / 2;
