@@ -80,7 +80,7 @@ async function drawImage() {
 
     recognizeSevenSegmentDisplay();
 
-    setTimeout(drawImage, 1000 / 30); // 30fps
+    requestAnimationFrame(drawImage);
 }
 
 function recognizeSevenSegmentDisplay() {
