@@ -114,9 +114,6 @@ src.data.set(imageData.data);
 const thresholdSlider = document.getElementById('threshold');
 const thresholdValue = thresholdSlider.value;
 cv.threshold(src, dst, thresholdValue, 255, cv.THRESH_BINARY);
- const thresholdSlider = document.getElementById('threshold');
-        const thresholdValue = thresholdSlider.value;
-        cv.threshold(src, dst, thresholdValue, 255, cv.THRESH_BINARY);
 
 const centerX = cameraCanvas.width / 2;
 const centerY = cameraCanvas.height / 2;
