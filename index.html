@@ -72,7 +72,7 @@ async function drawImage() {
     ctxOverlay.fillStyle = 'red';
     segmentPositions.forEach(digitSegmentPositions => {
         digitSegmentPositions.forEach(pos => {
-            ctxOverlay.beginPath
+            ctxOverlay.beginPath();
             ctxOverlay.arc(pos.x, pos.y, 2, 0, 2 * Math.PI);
             ctxOverlay.fill();
         });
