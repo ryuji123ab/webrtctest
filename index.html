@@ -80,21 +80,21 @@ const centerY = cameraCanvas.height / 2;
 const segmentPositions = [
   [
     { x: centerX - 70, y: centerY - 60 }, // a (1桁目)
-    { x: centerX - 45, y: centerY - 30 }, // b (1桁目)
-    { x: centerX - 45, y: centerY + 30 }, // c (1桁目)
-    { x: centerX - 70, y: centerY + 60 }, // d (1桁目)
-    { x: centerX - 95, y: centerY + 30 }, // e (1桁目)
-    { x: centerX - 95, y: centerY - 30 }, // f (1桁目)
-    { x: centerX - 70, y: centerY },      // g (1桁目)
+    { x: centerX - 20, y: centerY - 40 }, // b (1桁目)
+    { x: centerX - 20, y: centerY + 60 }, // c (1桁目)
+    { x: centerX - 70, y: centerY + 80 }, // d (1桁目)
+    { x: centerX - 120, y: centerY + 60 }, // e (1桁目)
+    { x: centerX - 120, y: centerY - 40 }, // f (1桁目)
+    { x: centerX - 70, y: centerY }, // g (1桁目)
   ],
   [
     { x: centerX + 70, y: centerY - 60 }, // a (2桁目)
-    { x: centerX + 95, y: centerY - 30 }, // b (2桁目)
-    { x: centerX + 95, y: centerY + 30 }, // c (2桁目)
-    { x: centerX + 70, y: centerY + 60 }, // d (2桁目)
-    { x: centerX + 45, y: centerY + 30 }, // e (2桁目)
-    { x: centerX + 45, y: centerY - 30 }, // f (2桁目)
-    { x: centerX + 70, y: centerY },      // g (2桁目)
+    { x: centerX + 120, y: centerY - 40 }, // b (2桁目)
+    { x: centerX + 120, y: centerY + 60 }, // c (2桁目)
+    { x: centerX + 70, y: centerY + 80 }, // d (2桁目)
+    { x: centerX + 20, y: centerY + 60 }, // e (2桁目)
+    { x: centerX + 20, y: centerY - 40 }, // f (2桁目)
+    { x: centerX + 70, y: centerY }, // g (2桁目)
   ],
 ];
 
@@ -136,21 +136,21 @@ const centerY = cameraCanvas.height / 2;
 const segmentPositions = [
   [
     { x: centerX - 70, y: centerY - 60 }, // a (1桁目)
-    { x: centerX - 45, y: centerY - 30 }, // b (1桁目)
-    { x: centerX - 45, y: centerY + 30 }, // c (1桁目)
-    { x: centerX - 70, y: centerY + 60 }, // d (1桁目)
-    { x: centerX - 95, y: centerY + 30 }, // e (1桁目)
-    { x: centerX - 95, y: centerY - 30 }, // f (1桁目)
-    { x: centerX - 70, y: centerY },      // g (1桁目)
+    { x: centerX - 20, y: centerY - 40 }, // b (1桁目)
+    { x: centerX - 20, y: centerY + 60 }, // c (1桁目)
+    { x: centerX - 70, y: centerY + 80 }, // d (1桁目)
+    { x: centerX - 120, y: centerY + 60 }, // e (1桁目)
+    { x: centerX - 120, y: centerY - 40 }, // f (1桁目)
+    { x: centerX - 70, y: centerY }, // g (1桁目)
   ],
   [
     { x: centerX + 70, y: centerY - 60 }, // a (2桁目)
-    { x: centerX + 95, y: centerY - 30 }, // b (2桁目)
-    { x: centerX + 95, y: centerY + 30 }, // c (2桁目)
-    { x: centerX + 70, y: centerY + 60 }, // d (2桁目)
-    { x: centerX + 45, y: centerY + 30 }, // e (2桁目)
-    { x: centerX + 45, y: centerY - 30 }, // f (2桁目)
-    { x: centerX + 70, y: centerY },      // g (2桁目)
+    { x: centerX + 120, y: centerY - 40 }, // b (2桁目)
+    { x: centerX + 120, y: centerY + 60 }, // c (2桁目)
+    { x: centerX + 70, y: centerY + 80 }, // d (2桁目)
+    { x: centerX + 20, y: centerY + 60 }, // e (2桁目)
+    { x: centerX + 20, y: centerY - 40 }, // f (2桁目)
+    { x: centerX + 70, y: centerY }, // g (2桁目)
   ],
 ];
 
@@ -173,12 +173,12 @@ displayElement.innerHTML = recognizedNumbers.join("");
 function getNumberFromSegments(segments) {
     const segmentPatterns = [
         0b0111111, // 0
-        0b0001100, // 1
+        0b0000110, // 1
         0b1011011, // 2
         0b1001111, // 3
-        0b1101100, // 4
-        0b1100111, // 5
-        0b1110111, // 6
+        0b1100110, // 4
+        0b1011011, // 5
+        0b1111101, // 6
         0b0001110, // 7
         0b1111111, // 8
         0b1101111, // 9
