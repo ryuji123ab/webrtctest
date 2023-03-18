@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Camera OCR App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Segment OCR</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
 </head>
-
 <body>
-    <video id="video" width="720" height="1280" autoplay></video>
-    <button id="capture">Capture</button>
-    <canvas id="canvas" width="720" height="1280"></canvas>
-    <p id="result">Result will be displayed here</p>
-
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script>
-    <script src="app.js"></script>
+    <video id="video" autoplay playsinline></video>
+    <canvas id="cameraCanvas" width="640" height="480"></canvas>
+    <canvas id="overlayCanvas" width="640" height="480" style="position: absolute; pointer-events: none;"></canvas>
+    <div id="result"></div>
+    <script async src="https://docs.opencv.org/master/opencv.js" onload="initialize();" type="text/javascript"></script>
 </body>
-
 </html>
