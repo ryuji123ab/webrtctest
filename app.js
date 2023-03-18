@@ -14,7 +14,7 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: false })
     });
 
 captureButton.addEventListener('click', () => {
-    ctx.drawImage(video, 0, 0, 1280, 720);
+    ctx.drawImage(video, 0, 0, 720,1280);
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     const binaryImageData = thresholdImage(imageData);
     ctx.putImageData(binaryImageData, 0, 0);
