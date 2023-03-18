@@ -15,7 +15,8 @@
     <canvas id="cameraCanvas" width="640" height="480"></canvas>
     <canvas id="overlayCanvas" width="640" height="480" style="position: absolute; pointer-events: none;"></canvas>
     <div id="result"></div>
-    <script async src="https://docs.opencv.org/master/opencv.js" onload="window.initialize();" type="text/javascript">
+    <script async src="https://docs.opencv.org/master/opencv.js" onload="window.initialize();" type="text/javascript"></script>
+    <script>
     window.initialize = async function() {
     if (typeof cv === 'undefined') {
         setTimeout(initialize, 50);
