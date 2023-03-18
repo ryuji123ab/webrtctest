@@ -7,13 +7,14 @@
     <style>
         canvas {
             border: 1px solid black;
+            position: absolute;
         }
     </style>
 </head>
 <body>
     <video id="video" autoplay playsinline></video>
     <canvas id="cameraCanvas" width="640" height="480"></canvas>
-    <canvas id="overlayCanvas" width="640" height="480" style="position: absolute; pointer-events: none;"></canvas>
+    <canvas id="overlayCanvas" width="640" height="480" style="pointer-events: none;"></canvas>
     <div id="result"></div>
     <script async src="https://docs.opencv.org/master/opencv.js" onload="window.initialize();" type="text/javascript"></script>
     <script>
