@@ -7,7 +7,7 @@ const ctx = canvas.getContext('2d');
 
 navigator.mediaDevices.getUserMedia({ 
     video: { 
-        facingMode: 'user', // フロントカメラを使用する場合は 'user' を指定し、バックカメラを使用する場合は 'environment' を指定します。
+        facingMode: 'environment', // フロントカメラを使用する場合は 'user' を指定し、バックカメラを使用する場合は 'environment' を指定します。
         width: { ideal: 640 },
         height: { ideal: 480 }
     }, 
