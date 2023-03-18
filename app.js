@@ -5,9 +5,9 @@ const captureButton = document.getElementById('capture');
 const resultElement = document.getElementById('result');
 const ctx = canvas.getContext('2d');
 navigator.mediaDevices.getUserMedia({ video: { 
-        facingMode: 'user', // フロントカメラを使用する場合は 'user' を指定し、バックカメラを使用する場合は 'environment' を指定します。
-        width: { ideal: 720 },
-        height: { ideal: 1280 }
+        facingMode: 'environment', // フロントカメラを使用する場合は 'user' を指定し、バックカメラを使用する場合は 'environment' を指定します。
+        width: { ideal: 1280 },
+        height: { ideal: 720 }
     }, audio: false})
     .then(stream => {
         video.srcObject = stream;
