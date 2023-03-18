@@ -12,6 +12,7 @@
     </style>
 </head>
 <body>
+    <div id="display" style="position: absolute; top: 20px; left: 10px; color: white; font-size: 24px;"></div>
     <video id="video" autoplay playsinline style="display: none;"></video>
     <canvas id="cameraCanvas" width="640" height="480"></canvas>
     <canvas id="overlayCanvas" width="640" height="480" style="pointer-events: none;"></canvas>
@@ -126,7 +127,8 @@ src.data.set(imageData.data);
     });
 
     const recognizedNumbers = segmentStates.map(getNumberFromSegments);
-    resultElement.innerHTML = `Recognized Numbers: ${recognizedNumbers.join("")}`;
+   const displayElement = document.getElementById('display');
+displayElement.innerHTML = recognizedNumbers.join("");
 
     src.delete();
     dst.delete();
