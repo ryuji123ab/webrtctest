@@ -30,7 +30,16 @@
 
 async function startCamera() {
     const video = document.getElementById('video');
-    const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+    
+    // 以下の変更を加えます
+    const constraints = {
+        audio: false,
+        video: {
+            facingMode: 'environment' // 背面カメラを指定
+        }
+    };
+    
+    const mediaStream = await navigator.mediaDevices.getUserMedia(constraints);
     video.srcObject = mediaStream;
 
     video.addEventListener('loadedmetadata', () => {
