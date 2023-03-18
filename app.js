@@ -5,7 +5,7 @@ const captureButton = document.getElementById('capture');
 const resultElement = document.getElementById('result');
 const ctx = canvas.getContext('2d');
 
-navigator.mediaDevices.getUserMedia({  facingMode: 'environment',video: { width: 720, height: 1280 }, audio: false })
+navigator.mediaDevices.getUserMedia({  facingMode: 'user',video: { width: 720, height: 1280 }, audio: false })
     .then(stream => {
         video.srcObject = stream;
         video.play();
