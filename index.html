@@ -107,7 +107,7 @@ function recognizeSevenSegmentDisplay() {
         let dst = new cv.Mat(cameraCanvas.height, cameraCanvas.width, cv.CV_8UC1);
 
         const ctx = cameraCanvas.getContext('2d');
-        const imageData = ctx.getImageData(0, 0, camera
+   const imageData = ctx.getImageData(0, 0, cameraCanvas.width, cameraCanvas.height);
 src.data.set(imageData.data);
     cv.cvtColor(src, src, cv.COLOR_RGBA2GRAY);
 // スライダーの値を閾値として使用
