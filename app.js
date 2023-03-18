@@ -6,6 +6,7 @@ const ctx = canvas.getContext('2d');
 
 navigator.mediaDevices.getUserMedia(
         video: {  // フロントカメラを使用する場合は 'user' を指定し、バックカメラを使用する場合は 'environment' を指定します。
+          facingMode: 'environment',
           width: { ideal: 1280 },
           height: { ideal: 720 }
     }, 
