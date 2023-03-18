@@ -117,8 +117,8 @@ function recognizeSevenSegmentDisplay() {
 src.data.set(imageData.data);
     cv.cvtColor(src, src, cv.COLOR_RGBA2GRAY);
 // スライダーの値を閾値として使用
-const thresholdSlider = document.getElementById('threshold');
-const thresholdValue = thresholdSlider.value;
+    const thresholdSlider = document.getElementById('threshold');
+const thresholdValue = parseInt(thresholdSlider.value, 10);
 cv.threshold(src, dst, thresholdValue, 255, cv.THRESH_BINARY);
 
 const centerX = cameraCanvas.width / 2;
