@@ -17,6 +17,9 @@
     <canvas id="cameraCanvas" width="640" height="480"></canvas>
     <canvas id="overlayCanvas" width="640" height="480" style="pointer-events: none;"></canvas>
     <div id="result"></div>
+    <!-- スライダーとラベルを追加 -->
+    <label for="threshold">Threshold: <span id="thresholdValue">128</span></label>
+    <input type="range" id="threshold" min="0" max="255" value="128">
     <script async src="https://docs.opencv.org/master/opencv.js" onload="window.initialize();" type="text/javascript"></script>
     <script>
     window.initialize = async function() {
@@ -24,7 +27,7 @@
         setTimeout(initialize, 50);
         return;
     }
-
+    w
     startCamera();
 };
 
@@ -97,18 +100,23 @@ const segmentPositions = [
 }
 
 function recognizeSevenSegmentDisplay() {
-    const cameraCanvas = document.getElementById('cameraCanvas');
-    const resultElement = document.getElementById('result');
+        const cameraCanvas = document.getElementById('cameraCanvas');
+        const resultElement = document.getElementById('result');
 
-    let src = new cv.Mat(cameraCanvas.height, cameraCanvas.width, cv.CV_8UC4);
-    let dst = new cv.Mat(cameraCanvas.height, cameraCanvas.width, cv.CV_8UC1);
+        let src = new cv.Mat(cameraCanvas.height, cameraCanvas.width, cv.CV_8UC4);
+        let dst = new cv.Mat(cameraCanvas.height, cameraCanvas.width, cv.CV_8UC1);
 
-    const ctx = cameraCanvas.getContext('2d');
-const imageData = ctx.getImageData(0, 0, cameraCanvas.width, cameraCanvas.height);
+        const ctx = cameraCanvas.getContext('2d');
+        const imageData = ctx.getImageData(0, 0, camera
 src.data.set(imageData.data);
     cv.cvtColor(src, src, cv.COLOR_RGBA2GRAY);
-
-    cv.threshold(src, dst, 128, 255, cv.THRESH_BINARY);
+// スライダーの値を閾値として使用
+const thresholdSlider = document.getElementById('threshold');
+const thresholdValue = thresholdSlider.value;
+cv.threshold(src, dst, thresholdValue, 255, cv.THRESH_BINARY);
+ const thresholdSlider = document.getElementById('threshold');
+        const thresholdValue = thresholdSlider.value;
+        cv.threshold(src, dst, thresholdValue, 255, cv.THRESH_BINARY);
 
 const centerX = cameraCanvas.width / 2;
 const centerY = cameraCanvas.height / 2;
@@ -176,6 +184,12 @@ function getNumberFromSegments(segments) {
 
     return -1; // 数字が認識できなかった場合
 }
+          // スライダーの値が変更されたときにラベルを更新
+    const thresholdSlider = document.getElementById('threshold');
+    thresholdSlider.addEventListener('input', () => {
+      const thresholdValueLabel = document.getElementById('thresholdValue');
+      thresholdValueLabel.textContent = thresholdSlider.value;
+    });
     </script>
 </body>
 </html>
