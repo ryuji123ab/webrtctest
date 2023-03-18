@@ -58,26 +58,29 @@ async function drawImage() {
     ctxCamera.drawImage(video, 0, 0, cameraCanvas.width, cameraCanvas.height);
     ctxOverlay.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
 
-    const segmentPositions = [
-        [
-            { x: 50, y: 30 },  // a (1桁目)
-            { x: 100, y: 50 },  // b (1桁目)
-            { x: 100, y: 150 }, // c (1桁目)
-            { x: 50, y: 170 }, // d (1桁目)
-            { x: 10, y: 150 },  // e (1桁目)
-            { x: 10, y: 50 },   // f (1桁目)
-            { x: 50, y: 90 },  // g (1桁目)
-        ],
-        [
-            { x: 190, y: 30 },  // a (2桁目)
-            { x: 240, y: 50 },  // b (2桁目)
-            { x: 240, y: 150 }, // c (2桁目)
-            { x: 190, y: 170 }, // d (2桁目)
-            { x: 150, y: 150 }, // e (2桁目)
-            { x: 150, y: 50 },  // f (2桁目)
-            { x: 190, y: 90 },  // g (2桁目)
-        ],
-    ];
+    const centerX = cameraCanvas.width / 2;
+const centerY = cameraCanvas.height / 2;
+
+const segmentPositions = [
+  [
+    { x: centerX - 70, y: centerY - 60 }, // a (1桁目)
+    { x: centerX - 20, y: centerY - 40 }, // b (1桁目)
+    { x: centerX - 20, y: centerY + 60 }, // c (1桁目)
+    { x: centerX - 70, y: centerY + 80 }, // d (1桁目)
+    { x: centerX - 120, y: centerY + 60 }, // e (1桁目)
+    { x: centerX - 120, y: centerY - 40 }, // f (1桁目)
+    { x: centerX - 70, y: centerY }, // g (1桁目)
+  ],
+  [
+    { x: centerX + 70, y: centerY - 60 }, // a (2桁目)
+    { x: centerX + 120, y: centerY - 40 }, // b (2桁目)
+    { x: centerX + 120, y: centerY + 60 }, // c (2桁目)
+    { x: centerX + 70, y: centerY + 80 }, // d (2桁目)
+    { x: centerX + 20, y: centerY + 60 }, // e (2桁目)
+    { x: centerX + 20, y: centerY - 40 }, // f (2桁目)
+    { x: centerX + 70, y: centerY }, // g (2桁目)
+  ],
+];
 
     ctxOverlay.fillStyle = 'red';
     segmentPositions.forEach(digitSegmentPositions => {
@@ -107,26 +110,29 @@ src.data.set(imageData.data);
 
     cv.threshold(src, dst, 128, 255, cv.THRESH_BINARY);
 
-  const segmentPositions = [
-        [
-            { x: 50, y: 30 },  // a (1桁目)
-            { x: 100, y: 50 },  // b (1桁目)
-            { x: 100, y: 150 }, // c (1桁目)
-            { x: 50, y: 170 }, // d (1桁目)
-            { x: 10, y: 150 },  // e (1桁目)
-            { x: 10, y: 50 },   // f (1桁目)
-            { x: 50, y: 90 },  // g (1桁目)
-        ],
-        [
-            { x: 190, y: 30 },  // a (2桁目)
-            { x: 240, y: 50 },  // b (2桁目)
-            { x: 240, y: 150 }, // c (2桁目)
-            { x: 190, y: 170 }, // d (2桁目)
-            { x: 150, y: 150 }, // e (2桁目)
-            { x: 150, y: 50 },  // f (2桁目)
-            { x: 190, y: 90 },  // g (2桁目)
-        ],
-    ];
+const centerX = cameraCanvas.width / 2;
+const centerY = cameraCanvas.height / 2;
+
+const segmentPositions = [
+  [
+    { x: centerX - 70, y: centerY - 60 }, // a (1桁目)
+    { x: centerX - 20, y: centerY - 40 }, // b (1桁目)
+    { x: centerX - 20, y: centerY + 60 }, // c (1桁目)
+    { x: centerX - 70, y: centerY + 80 }, // d (1桁目)
+    { x: centerX - 120, y: centerY + 60 }, // e (1桁目)
+    { x: centerX - 120, y: centerY - 40 }, // f (1桁目)
+    { x: centerX - 70, y: centerY }, // g (1桁目)
+  ],
+  [
+    { x: centerX + 70, y: centerY - 60 }, // a (2桁目)
+    { x: centerX + 120, y: centerY - 40 }, // b (2桁目)
+    { x: centerX + 120, y: centerY + 60 }, // c (2桁目)
+    { x: centerX + 70, y: centerY + 80 }, // d (2桁目)
+    { x: centerX + 20, y: centerY + 60 }, // e (2桁目)
+    { x: centerX + 20, y: centerY - 40 }, // f (2桁目)
+    { x: centerX + 70, y: centerY }, // g (2桁目)
+  ],
+];
 
     const segmentStates = segmentPositions.map(digitSegmentPositions => {
         return digitSegmentPositions.map(pos => {
