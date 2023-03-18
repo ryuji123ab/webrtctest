@@ -92,8 +92,8 @@ function recognizeSevenSegmentDisplay() {
 
     const ctx = cameraCanvas.getContext('2d');
 const imageData = ctx.getImageData(0, 0, cameraCanvas.width, cameraCanvas.height);
-src = cv.imread(cameraCanvas);
-cv.cvtColor(src, src, cv.COLOR_RGBA2GRAY);
+src.data.set(imageData.data);
+    cv.cvtColor(src, src, cv.COLOR_RGBA2GRAY);
 
     cv.threshold(src, dst, 128, 255, cv.THRESH_BINARY);
 
