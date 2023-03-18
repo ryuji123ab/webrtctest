@@ -12,7 +12,7 @@
     </style>
 </head>
 <body>
-    <video id="video" autoplay playsinline></video>
+    <video id="video" autoplay playsinline style="display: none;"></video>
     <canvas id="cameraCanvas" width="640" height="480"></canvas>
     <canvas id="overlayCanvas" width="640" height="480" style="pointer-events: none;"></canvas>
     <div id="result"></div>
@@ -50,30 +50,30 @@ async function drawImage() {
 
     const segmentPositions = [
         [
-            { x: 40, y: 20 },  // a (1桁目)
-            { x: 90, y: 40 },  // b (1桁目)
-            { x: 90, y: 140 }, // c (1桁目)
-            { x: 40, y: 160 }, // d (1桁目)
-            { x: 0, y: 140 },  // e (1桁目)
-            { x: 0, y: 40 },   // f (1桁目)
-            { x: 40, y: 80 },  // g (1桁目)
+            { x: 50, y: 30 },  // a (1桁目)
+            { x: 100, y: 50 },  // b (1桁目)
+            { x: 100, y: 150 }, // c (1桁目)
+            { x: 50, y: 170 }, // d (1桁目)
+            { x: 10, y: 150 },  // e (1桁目)
+            { x: 10, y: 50 },   // f (1桁目)
+            { x: 50, y: 90 },  // g (1桁目)
         ],
         [
-            { x: 180, y: 20 },  // a (2桁目)
-            { x: 230, y: 40 },  // b (2桁目)
-            { x: 230, y: 140 }, // c (2桁目)
-            { x: 180, y: 160 }, // d (2桁目)
-            { x: 140, y: 140 }, // e (2桁目)
-            { x: 140, y: 40 },  // f (2桁目)
-            { x: 180, y: 80 },  // g (2桁目)
+            { x: 190, y: 30 },  // a (2桁目)
+            { x: 240, y: 50 },  // b (2桁目)
+            { x: 240, y: 150 }, // c (2桁目)
+            { x: 190, y: 170 }, // d (2桁目)
+            { x: 150, y: 150 }, // e (2桁目)
+            { x: 150, y: 50 },  // f (2桁目)
+            { x: 190, y: 90 },  // g (2桁目)
         ],
     ];
 
     ctxOverlay.fillStyle = 'red';
     segmentPositions.forEach(digitSegmentPositions => {
         digitSegmentPositions.forEach(pos => {
-            ctxOverlay.beginPath();
-            ctxOverlay.arc(pos.x, pos.y, 2, 0            , 2 * Math.PI);
+            ctxOverlay.beginPath
+            ctxOverlay.arc(pos.x, pos.y, 2, 0, 2 * Math.PI);
             ctxOverlay.fill();
         });
     });
@@ -97,22 +97,22 @@ function recognizeSevenSegmentDisplay() {
 
     const segmentPositions = [
         [
-            { x: 40, y: 20 },  // a (1桁目)
-            { x: 90, y: 40 },  // b (1桁目)
-            { x: 90, y: 140 }, // c (1桁目)
-            { x: 40, y: 160 }, // d (1桁目)
-            { x: 0, y: 140 },  // e (1桁目)
-            { x: 0, y: 40 },   // f (1桁目)
-            { x: 40, y: 80 },  // g (1桁目)
+            { x: 50, y: 30 },  // a (1桁目)
+            { x: 100, y: 50 },  // b (1桁目)
+            { x: 100, y: 150 }, // c (1桁目)
+            { x: 50, y: 170 }, // d (1桁目)
+            { x: 10, y: 150 },  // e (1桁目)
+            { x: 10, y: 50 },   // f (1桁目)
+            { x: 50, y: 90 },  // g (1桁目)
         ],
         [
-            { x: 180, y: 20 },  // a (2桁目)
-            { x: 230, y: 40 },  // b (2桁目)
-            { x: 230, y: 140 }, // c (2桁目)
-            { x: 180, y: 160 }, // d (2桁目)
-            { x: 140, y: 140 }, // e (2桁目)
-            { x: 140, y: 40 },  // f (2桁目)
-            { x: 180, y: 80 },  // g (2桁目)
+            { x: 190, y: 30 },  // a (2桁目)
+            { x: 240, y: 50 },  // b (2桁目)
+            { x: 240, y: 150 }, // c (2桁目)
+            { x: 190, y: 170 }, // d (2桁目)
+            { x: 150, y: 150 }, // e (2桁目)
+            { x: 150, y: 50 },  // f (2桁目)
+            { x: 190, y: 90 },  // g (2桁目)
         ],
     ];
 
@@ -148,9 +148,8 @@ function getNumberFromSegments(segments) {
         return acc | (segment ? 1 : 0) << idx;
     }, 0);
 
-    for (let i = 0; i < segmentPatterns.length; i++) {
-        if (
-        segmentPatterns[i] === inputPattern) {
+    for (let i = 0; i < segmentPatterns.length; i++)
+        if (segmentPatterns[i] === inputPattern) {
             return i;
         }
     }
